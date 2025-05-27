@@ -1,3 +1,4 @@
+/* Base styles – unchanged from your original */
 body {
     margin: 0;
     padding: 0;
@@ -25,6 +26,7 @@ body.light-mode {
     align-items: center;
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
     transition: background-color 0.5s ease;
+    z-index: 999;
 }
 
 body.dark-mode .sidebar {
@@ -310,4 +312,67 @@ body.light-mode .social-icons img.social-icon {
 
 .theme-switch:not(:checked) + .theme-label .moon-icon {
     opacity: 0;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        box-shadow: none;
+        padding: 20px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .section-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .profile-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .sidebar h1 {
+        font-size: 1.2em;
+    }
+
+    .section h2 {
+        font-size: 1.1em;
+    }
+
+    .theme-toggle {
+        margin-bottom: 0;
+        margin-top: 20px;
+    }
+
+    .contact {
+        font-size: 0.85em;
+    }
+
+    .copyright {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-label {
+        width: 50px;
+        height: 28px;
+    }
+
+    .theme-label .slider {
+        width: 24px;
+        height: 24px;
+    }
+
+    .theme-switch:checked + .theme-label .slider {
+        transform: translateX(22px);
+    }
 }
